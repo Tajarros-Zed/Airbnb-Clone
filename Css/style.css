@@ -1,0 +1,735 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --main-color: whitesmoke;
+    --secondary-color: #333;
+    --main-bg: #131313;
+    --secondary-bg: #151515;
+    --third-bg: #ff5361;
+}
+
+body {
+    background-color: #151515;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+/* || HEADER || NAVIGATION || */
+.nav-container {
+    width: 100%;
+    position: fixed;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    z-index: 1000;
+}
+
+.nav-logo {
+    width: 140px;
+    cursor: pointer;
+}
+
+.nav-list li {
+    display: inline-block;
+    margin: 10px 50px;
+    cursor: pointer;
+}
+
+.nav-list li a {
+    color: var(--main-color);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    position: relative;
+}
+
+.nav-list li a::after {
+    bottom: -4px;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    background-color: #fff;
+    opacity: 0.6;
+    transition: width 0.3s ease, opacity .3s ease 0s;
+    width: 0;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
+    opacity: 0.9;
+}
+
+.sign-in-btn {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    padding: 5px 18px;
+    border-radius: 20px;
+    transition: .9s ease-in;
+}
+
+/* || MAIN || LAND PAGE || */
+.landpage-container {
+    max-width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(../Images/Landpage.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    border: 0;
+    outline: none;
+}
+
+.landpage-text {
+    max-width: 70%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px 7%;
+}
+
+.landpage-text h1 {
+    display: grid;
+    place-items: center;
+    color: var(--main-color);
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.landpage-text p {
+    color: var(--main-color);
+    font-size: 15px;
+    text-align: center;
+    font-weight: 400;
+    opacity: .8;
+}
+
+.search-bar {
+    background-color: var(--main-color);
+    width: 70%;
+    border-radius: 50px;
+    padding: 6px 10px 6px 30px;
+    margin: 10px auto;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-bar form input {
+    display: block;
+    border: 0;
+    outline: none;
+    background-color: var(--main-color);
+}
+
+.search-bar form button {
+    background-color: var(--third-bg);
+    border: 0;
+    outline: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.search-bar form button img {
+    width: 20px;
+    margin-top: 7px;
+}
+
+.location-input {
+    flex: 1;
+}
+
+.search-bar form label {
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+
+/* || MAIN || TRENDING CABINS || */
+.popular-cabins-container {
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: var(--main-bg);
+    position: relative;
+    padding: 20px 7%;
+    border: 0;
+    outline: none;
+}
+
+.popular-cabins-container h2 {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 50px auto;
+    opacity: .8;
+}
+
+.popular-cabins {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 30px;
+}
+
+.popular-cabins div img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: .5 ease-out;
+}
+
+.popular-cabins div:hover img {
+    transform: scale(1.1);
+    transition: .4s ease-out;
+    cursor: pointer;
+}
+
+.popular-cabins div span h3 {
+    color: var(--main-color);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+
+.popular-cabins div span p {
+    color: var(--main-color);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    opacity: .8;
+}
+
+/* || MAIN || TRENDING PLACES || */
+.trending-places-container {
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: var(--secondary-bg);
+    position: relative;
+    padding: 20px 7%;
+    border: 0;
+    outline: none;
+}
+
+.trending-places-container h2 {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin: 50px auto;
+    opacity: .8;
+}
+
+.trending-places {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 30px;
+}
+
+.trending-places div img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.trending-places div:hover img {
+    transform: scale(1.1);
+    transition: .4s ease-out;
+    cursor: pointer;
+}
+
+.trending-places div span h3 {
+    color: var(--main-color);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+
+.trending-places div span p {
+    color: var(--main-color);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    opacity: .8;
+}
+
+/* || MAIN || TRENDING TREE HOUSES */
+.trending-treehouse-container {
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: var(--main-bg);
+    position: relative;
+    padding: 20px 7%;
+    border: 0;
+    outline: none;
+}
+
+.trending-treehouse-container h2 {
+    color: var(--main-color);
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: .8;
+    margin: 50px auto;
+}
+
+.trending-treehouse {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    grid-gap: 30px;
+}
+
+.trending-treehouse div img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.trending-treehouse div:hover img {
+    transform: scale(1.1);
+    transition: .4s ease-out;
+    cursor: pointer;
+}
+
+.trending-treehouse div span h3 {
+    color: var(--main-color);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .5px;
+}
+
+.trending-treehouse div span p {
+    color: var(--main-color);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    opacity: .8;
+}
+
+
+
+/* || MAIN || BANNER ONE || */
+.banner-one-container {
+    max-width: 100%;
+    min-height: 90vh;
+    background-color: var(--secondary-bg);
+    position: relative;
+    padding: 20px 7%;
+    border: 0;
+    outline: none;
+}
+
+.banner-one {
+    max-width: 100%;
+    height: 70vh;
+    margin: 5% 0 5%;
+    background-image: linear-gradient(rgba(0,0,0,0.60), rgba(0,0,0,0.75)), url(../Images/Banner-1.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    position: relative;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.banner-one div h1 {
+    color: var(--main-color);
+    font-size: 40px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.banner-one div p {
+    color: var(--main-color);
+    opacity: .8;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: .5x;
+    margin-bottom: 50px;
+}
+
+.know-more {
+    background-color: var(--main-color);
+    color: var(--secondary-color);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* || FOOTER || CONTAINER */
+.footer-container {
+    max-width: 100%;
+    min-height: 10vh;
+    background-color: var(--main-bg);
+    position: relative;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    flex-flow: row wrap;
+    border: 0;
+    outline: none;
+
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
+    margin-right: 30%;
+    cursor: pointer;
+}
+
+.fa-brands {
+    border: 50%;
+    text-align: center;
+    padding: 2%;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+    .search-bar {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1070px) {
+    .nav-container {
+        padding: 20px 5%;
+    }
+
+    .nav-list li {
+        margin: 10px 30px;
+    }
+
+    .landpage-text h1 {
+        text-align: center;
+    }
+}
+
+@media (max-width: 965px) {
+    .nav-container {
+        padding: 20px 3%;
+    }
+
+    .nav-list li {
+        margin: 10px 20px;
+    }
+
+    .search-bar form div:nth-child(4) {
+        display: none;
+    }
+
+    .footer-logo {
+        margin-right: 10%;
+    }
+}
+
+@media (max-width: 800px) {
+    .search-bar {
+        width: 90%;
+    }
+
+    .sign-in-btn {
+        display: none;
+    }
+
+    .footer-container {
+        gap: 2rem;
+    }
+
+    .banner-one div h1 {
+        font-size: 30px;
+    }
+
+    .banner-one div p {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 680px) {
+    .nav-container {
+        padding: 20px 7%;
+    }
+
+    .nav-list {
+        display: grid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        z-index: 1000;
+        width: 100%;
+        background-color: var(--main-bg);
+        transition: .8s ease-out;
+        place-content: center;
+        grid-gap: 30px;
+        height: 60rem;
+    }
+
+    .nav-list li a {
+        font-size: 12px;
+        color: var(--main-color);
+    }
+
+    .nav-toggler {
+        display: grid !important;
+    }
+
+    .landpage-text{
+        display: none;
+    }
+
+    .search-bar {
+        max-width: 80%;
+        height: 25rem;
+        border-radius: 10px;
+        margin: 20px;
+        padding: 20px;
+        position: absolute;
+        top: 20%;
+    }
+
+    .search-bar form {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .search-bar form input {
+        width: 100%;
+    }
+
+    .search-bar form div:nth-child(4) {
+        display: block;
+    }
+
+    .search-bar form button {
+        width: 100%;
+        border-radius: 4rem;
+        height: 40px;
+    }
+
+    .banner-one {
+        padding: 20px;
+    }
+
+    .banner-one div h1 {
+        font-size: 25px;
+    }
+
+    .banner-one div p {
+        font-size: 12px;
+    }
+
+    .footer-container {
+        gap: 1rem;
+    }
+
+    .footer-logo {
+        width: 100px;
+        margin-right: 0;
+    }
+
+    .fa-brands {
+        padding: 0;
+    }
+
+    .trending-treehouse-container h2 {
+        text-align: center;
+    }
+
+    .trending-places-container h2 {
+        text-align: center;
+    }
+
+    .popular-cabins-container h2 {
+        text-align: center;
+    }
+
+    .footer-container {
+        padding: 20px 3%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.nav-toggler {
+    cursor: pointer;
+    display: none;
+    min-height: min-content;
+    margin-right: 20px;
+}
+
+.bar {
+    width: 35px;
+    height: 5px;
+    background-color: var(--main-color);
+    margin-bottom: 10px;
+    border-radius: 20px;
+    transition: .5s ease-in;
+}
+
+.hiden {
+    display: none;
+}
+
+input:checked ~ .nav-list {
+    transform: translateY(0);
+    position: absolute;
+    height: 20rem;
+    top: 5.5rem;
+    max-width: 100%;
+    left: 0%;
+    text-align: center;
+    height: 30rem;
+}
+
+input:checked ~ .nav-toggler .bar:nth-child(1) {
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+input:checked ~ .nav-toggler .bar:nth-child(2) {
+    display: none;
+}
+
+input:checked ~ .nav-toggler .bar:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .sign-in-btn {
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+    top: 170%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 20px;
+    transition: 0.9s ease-in;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.sign-in-container {
+    max-width: 100%;
+    min-height: 100vh;
+    background-color: var(--main-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    padding: 20px 7%;
+}
+
+.sign-in-container img {
+    width: 80px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+}
+
+.sign-in {
+    background-color: #252525;
+    max-width: 300px;
+    min-height: 10rem;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 30px auto;
+    border: .5px solid var(--secondary-color);
+}
+
+.sign-in h1 {
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: .7;
+}
+
+.sign-in form {
+    display: grid;
+    place-content: left;
+    grid-gap: 50px;
+}
+
+.sign-in form div label {
+    color: var(--main-color);
+    opacity: .7;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    padding-left: 10px;
+}
+
+.sign-in form div input {
+    display: block;
+    border: .5px solid var(--secondary-color);
+    padding: 5%;
+    outline: none;
+    width: 100%;
+    background-color: var(--main-bg);
+    border-radius: 10px;
+    margin-top: 10px;
+    color: var(--main-color);
+    letter-spacing: 2px;
+}
+
+.sign-in form button {
+    width: 100%;
+    height: 30px;
+    border-radius: 10px;
+    background-color: var(--third-bg);
+    border: 0;
+    outline: none;
+    color: var(--main-bg);
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
